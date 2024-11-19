@@ -154,14 +154,41 @@ class MyApp extends StatelessWidget {
         //   title: Text(names[index]),
         // )),
         //---------------------------------------------------------------
-        body: GridView.builder(
-          itemCount: 25,
-            //how many in each row
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 5),
-            itemBuilder: (context,index)=> Container(
-              color: Colors.purple,
-              margin: EdgeInsets.all(2),
-            ))
+        // body: GridView.builder(
+        //   itemCount: 25,
+        //     //how many in each row
+        //     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 5),
+        //     itemBuilder: (context,index)=> Container(
+        //       color: Colors.purple,
+        //       margin: EdgeInsets.all(2),
+        //     ))
+//---------------------------------------------------------------
+
+        body: Stack(
+          alignment: Alignment.center,
+          children: [
+            //1st box
+            Container(
+              height: 300,
+              width: 300,
+              color: Colors.blue,
+            ),
+            //2nd Box
+            Container(
+              height: 200,
+              width: 200,
+              color: Colors.black,
+            ),
+            //3rd Box
+            Container(
+              height: 100,
+              width: 100,
+              color: Colors.green,
+            )
+          ],
+        ),
+
+
       ),
     );
   }
