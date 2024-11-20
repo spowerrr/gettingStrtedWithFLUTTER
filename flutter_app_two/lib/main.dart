@@ -8,7 +8,9 @@ class MyApp extends StatelessWidget {
   const MyApp({
     super.key
   });
-
+void printFunction(){
+  print("Inside print function");
+  }
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -17,6 +19,7 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         body: GestureDetector(
           onTap: () {
+            printFunction();
             print("This is i'm tapping here");
           },
           child:Container(
