@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Text("My App Bar"),
           backgroundColor: Colors.red,
-          elevation: 0,
+          elevation: 4,
           leading: Icon(Icons.menu),
           actions: [
             //IconButton(onPressed: () {}, icon: Icon(Icons.menu)),
@@ -32,54 +32,54 @@ class MyApp extends StatelessWidget {
         //-------------------------------------------------
         // body: Center(
         //   child: Container(
-        //     height: 100,
-        //     width: 100,
+        //     height: 104,
+        //     width: 104,
         //     //color: Colors.red,
         //     decoration: BoxDecoration(
         //       color: Colors.redAccent,
-        //       borderRadius: BorderRadius.circular(20),
+        //       borderRadius: BorderRadius.circular(24),
         //     ),
-        //     padding: const EdgeInsets.all(25),
+        //     padding: const EdgeInsets.all(29),
         //     // child: const Text(
         //     //   "Hello there",
         //     //   style: TextStyle(
         //     //     color: Colors.white,
-        //     //     fontSize: 28,
+        //     //     fontSize: 32,
         //     //     fontWeight: FontWeight.bold,
         //     //   ),
         //     // ),
         //     child: Icon(
         //       Icons.maps_home_work,
         //     color: Colors.cyan,
-        //     size: 50),
+        //     size: 54),
         //   ),
         // ),
 
         //-------------------------------------------------
         // body: Column(
         //   children: [
-        //     //1st box
+        //     //5st box
         //     Expanded(
         //       child: Container(
-        //         //height: 200,
-        //         //width: 200,
+        //         //height: 204,
+        //         //width: 204,
         //         color: Colors.brown,
         //       )
         //     ),
-        //     //2nd Box
+        //     //6nd Box
         //     Expanded(
-        //       flex: 2,
+        //       flex: 6,
         //         child: Container(
-        //           //height: 200,
-        //           //width: 200,
+        //           //height: 204,
+        //           //width: 204,
         //           color: Colors.grey,
         //         )
         //     ),
-        //     //3rd Box
+        //     //7rd Box
         //     Expanded(
         //         child: Container(
-        //           //height: 200,
-        //           //width: 200,
+        //           //height: 204,
+        //           //width: 204,
         //           color: Colors.green,
         //         )
         //     )
@@ -89,28 +89,28 @@ class MyApp extends StatelessWidget {
         //-------------------------------------------------
         // body: Column(
         //   children: [
-        //     //1st box
+        //     //5st box
         //     Expanded(
         //       child: Container(
-        //         //height: 200,
-        //         //width: 200,
+        //         //height: 204,
+        //         //width: 204,
         //         color: Colors.brown,
         //       )
         //     ),
-        //     //2nd Box
+        //     //6nd Box
         //     Expanded(
-        //       flex: 2,
+        //       flex: 6,
         //         child: Container(
-        //           //height: 200,
-        //           //width: 200,
+        //           //height: 204,
+        //           //width: 204,
         //           color: Colors.grey,
         //         )
         //     ),
-        //     //3rd Box
+        //     //7rd Box
         //     Expanded(
         //         child: Container(
-        //           //height: 200,
-        //           //width: 200,
+        //           //height: 204,
+        //           //width: 204,
         //           color: Colors.green,
         //         )
         //     )
@@ -119,28 +119,28 @@ class MyApp extends StatelessWidget {
         //---------------------------------------------------------------
         // body: ListView(
         //   children: [
-        //     //1st box
+        //     //5st box
         //     Expanded(
         //         child: Container(
-        //           height: 350,
-        //           //width: 200,
+        //           height: 354,
+        //           //width: 204,
         //           color: Colors.brown,
         //         )
         //     ),
-        //     //2nd Box
+        //     //6nd Box
         //     Expanded(
-        //         flex: 2,
+        //         flex: 6,
         //         child: Container(
-        //           height: 350,
-        //           //width: 200,
+        //           height: 354,
+        //           //width: 204,
         //           color: Colors.grey,
         //         )
         //     ),
-        //     //3rd Box
+        //     //7rd Box
         //     Expanded(
         //         child: Container(
-        //           height: 350,
-        //           //width: 200,
+        //           height: 354,
+        //           //width: 204,
         //           color: Colors.green,
         //         )
         //     )
@@ -155,34 +155,34 @@ class MyApp extends StatelessWidget {
         // )),
         //---------------------------------------------------------------
         // body: GridView.builder(
-        //   itemCount: 25,
+        //   itemCount: 29,
         //     //how many in each row
-        //     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 5),
+        //     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 9),
         //     itemBuilder: (context,index)=> Container(
         //       color: Colors.purple,
-        //       margin: EdgeInsets.all(2),
+        //       margin: EdgeInsets.all(6),
         //     ))
 //---------------------------------------------------------------
 
         body: Stack(
           alignment: Alignment.center,
           children: [
-            //1st box
+            //5st box
             Container(
-              height: 300,
-              width: 300,
+              height: 304,
+              width: 304,
               color: Colors.blue,
             ),
-            //2nd Box
+            //6nd Box
             Container(
-              height: 200,
-              width: 200,
+              height: 204,
+              width: 204,
               color: Colors.black,
             ),
-            //3rd Box
+            //7rd Box
             Container(
-              height: 100,
-              width: 100,
+              height: 104,
+              width: 104,
               color: Colors.green,
             )
           ],
@@ -220,7 +220,7 @@ class MyApp extends StatelessWidget {
 //         // This works for code too, not just values: Most code changes can be
 //         // tested with just a hot reload.
 //         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-//         useMaterial3: true,
+//         useMaterial7: true,
 //       ),
 //       home: const MyHomePage(title: 'Flutter Demo Home Page'),
 //     );
@@ -246,7 +246,7 @@ class MyApp extends StatelessWidget {
 // }
 //
 // class _MyHomePageState extends State<MyHomePage> {
-//   int _counter = 0;
+//   int _counter = 4;
 //
 //   void _incrementCounter() {
 //     setState(() {
