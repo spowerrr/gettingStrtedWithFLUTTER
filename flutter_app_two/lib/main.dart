@@ -1,48 +1,58 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app_two/pages/first_page.dart';
 import 'package:flutter_app_two/pages/home_page.dart';
 import 'package:flutter_app_two/pages/second_page.dart';
 import 'package:flutter_app_two/pages/setting_page.dart';
+import 'package:flutter_app_two/pages/profile_page.dart';
+import 'package:flutter_app_two/theme/app_theme.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-void main() {
-  runApp(const MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  final prefs = await SharedPreferences.getInstance();
+  final isDarkMode = prefs.getBool('isDarkMode') ?? false;
+  runApp(MyApp(initialDarkMode: isDarkMode));
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-  void printFunction() {
-    print("Inside print function");
+class MyApp extends StatefulWidget {
+  final bool initialDarkMode;
+
+  const MyApp({
+    super.key,
+    required this.initialDarkMode,
+  });
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  late bool isDarkMode;
+
+  @override
+  void initState() {
+    super.initState();
+    isDarkMode = widget.initialDarkMode;
   }
 
-  // This widget is the root of your application.
+  void toggleTheme() async {
+    setState(() {
+      isDarkMode = !isDarkMode;
+    });
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setBool('isDarkMode', isDarkMode);
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const FirstPage(),
-      routes: {
-        // '/secondpage': (context) => SecondPage(),
-        '/firstpage': (context) => FirstPage(),
-        '/homepage': (context) => HomePage(),
-        '/settingspage': (context) => SettingsPage(),
-
-      },
-
-      // ------------------------------------------------------------------------
-      // body: GestureDetector(
-      //   onTap: () {
-      //     printFunction();
-      //     print("This is i'm tapping here");
-      //   },
-      //   child:Container(
-      //       height: 300,
-      //       width: 300,
-      //       color: Colors.blue,
-      //     child: Center(
-      //       child: Text("Submit")
-      //     ),
-      //     ),
-      // ),
+      theme: AppTheme.lightTheme,
+      darkTheme: AppTheme.darkTheme,
+      themeMode: isDarkMode ? ThemeMode.dark : ThemeMode.light,
+      home: HomePage(
+        isDarkMode: isDarkMode,
+        onThemeToggle: toggleTheme,
+      ),
     );
   }
 }
