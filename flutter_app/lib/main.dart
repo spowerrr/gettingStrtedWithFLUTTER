@@ -9,7 +9,7 @@ class MyApp extends StatelessWidget {
   MyApp({super.key});
 
   //creating a list which will store names
-  List names =["Rahim", "Karim","Zahid","Rahul"];
+  List names = ["Rahim", "Karim", "Zahid", "Rahul"];
 
   @override
   Widget build(BuildContext context) {
@@ -187,8 +187,6 @@ class MyApp extends StatelessWidget {
             )
           ],
         ),
-
-
       ),
     );
   }
