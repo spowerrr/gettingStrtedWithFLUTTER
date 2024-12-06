@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -11,13 +13,13 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'BMI Calculator'),
+      home: const MyHomePage(title: 'BMI Calculator'),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key? key, required this.title}) : super(key: key);
+  const MyHomePage({super.key, required this.title});
 
   final String title;
 
@@ -97,26 +99,29 @@ class _MyHomePageState extends State<MyHomePage> {
             children: <Widget>[
               TextField(
                 controller: _heightController,
-                decoration: InputDecoration(labelText: 'Height (cm)'),cursorColor: Colors.red,
+                decoration: const InputDecoration(labelText: 'Height (cm)'),
+                cursorColor: Colors.red,
                 keyboardType: TextInputType.number,
               ),
               TextField(
                 controller: _weightController,
-                decoration: InputDecoration(labelText: 'Weight (kg)'),
+                decoration: const InputDecoration(labelText: 'Weight (kg)'),
                 keyboardType: TextInputType.number,
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               ElevatedButton(
                 onPressed: _calculateBMI,
-                child: Text('Calculate BMI'),
+                child: const Text('Calculate BMI'),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               Text(
                 _bmiResult != null ? 'Your BMI: $_bmiResult' : '',
                 style: Theme.of(context).textTheme.headlineMedium,
               ),
               Text(
-                _interpretation != null ? 'Interpretation: $_interpretation' : '',
+                _interpretation != null
+                    ? 'Interpretation: $_interpretation'
+                    : '',
                 style: Theme.of(context).textTheme.bodyLarge,
               ),
             ],
